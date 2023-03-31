@@ -7,7 +7,105 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.title {
+  text-align: center;
+}
+
+.wrapper {
+width: 80%;
+margin: 0 auto;
+}
+
+.first__block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo__dog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo__dog img{
+  width: 250px;
+  border-radius: 20px;
+  height: 250px;
+  overflow: hidden;
+  background-position: center; 
+  background-size: cover; 
+  margin: 30px;
+}
+
+.cart__item {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative
+}
+
+.addLike, .addLike_green {
+  position: absolute;
+  left: 77px;
+  bottom: 50px;
+  padding: 5px;
+  border: none;
+  background: rgb(255, 17, 0);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addLike_green {
+  background-color: rgb(121, 248, 2);
+}
+
+.addLike:hover {
+  opacity: 0.95;
+}
+
+.addLike:active {
+  transform: translateY(3px);
+}
+
+.addLike_green:hover {
+  opacity: 0.95;
+}
+
+.addLike_green:active {
+  transform: translateY(3px);
+}
+
+.favorite__block {
+  width: 100vw;
+  height: 100vh;
+
+  background: rgb(51, 49, 49);
+}
+
+.cart-box {
+  width: 150px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: blueviolet;
+  border-radius: 10px;
+  cursor: pointer;
+
+  color: #fff;
+}
+
+.card__inner {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.cart-box:active {
+  transform: translateY(2px);
 }
