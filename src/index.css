@@ -109,3 +109,23 @@ margin: 0 auto;
 .cart-box:active {
   transform: translateY(2px);
 }
+
+.dog-box_fav {
+  position: relative;
+}
+
+.delete {
+  position: absolute;
+  background:rgb(255, 17, 0);
+  border: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  left: 55px;
+  bottom: 50px;
+}
+
+.delete:active {
+  transform: translateY(3px);
+}

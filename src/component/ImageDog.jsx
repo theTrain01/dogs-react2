@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImageDog = ({image,onAddToCart }) => {
+const ImageDog = ({image,onAddToCart}) => {
   const [isAdd, setIsAdd] = React.useState(false);
 
   const [text, setText] = React.useState('Добавить в избранное')

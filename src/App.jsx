@@ -6,9 +6,7 @@ import './index.css'
 
 function App() {
   const [items, setItems] = React.useState([])
-  const [cartItems, setCartItems] = React.useState([
-    'https://images.dog.ceo/breeds/cockapoo/gracie.jpg'
-  ])
+  const [cartItems, setCartItems] = React.useState([])
 
   const [favoriteItem, setFavoriteItem] = React.useState(false);
 
@@ -30,6 +28,10 @@ function App() {
     console.log(item)
   }
 
+  const removeFavorites = (index) => {
+    setCartItems((prev) => prev.filter()) 
+  }
+
   React.useEffect(() => {
     fetch('https://dog.ceo/api/breeds/image/random/3').then((res) => {
       return res.json()
@@ -45,7 +47,7 @@ return (
               <p className='cart__name'>{textFavorite}</p>     
             </div>
           </div>
-          {favoriteItem ? <FavoriteBlock dogItems = {cartItems}/> : 
+          {favoriteItem ? <FavoriteBlock dogItems = {cartItems} removeFavorites = {removeFavorites}/> : 
             (
             <div>
                 <h1 className='title'>
@@ -57,7 +59,7 @@ return (
                           {
                             items.map((item, i) => (
                               <ImageDog 
-                              key={i}
+                                key={i}
                                 image = {item}
                                 onAddToCart = {onAddToCart}
                               />
