@@ -1,7 +1,8 @@
 import React from 'react';
 
-import FavoriteBlock from './component/FavoriteBlock.jsx';
-import ImageDog from './component/ImageDog.jsx'
+import FavoriteBlock from './component/Favorite/FavoriteBlock.jsx';
+import ImageDog from './component/ImageDog.jsx';
+
 import './index.css'
 
 function App() {
@@ -24,16 +25,14 @@ function App() {
 
   const onAddToCart = (item) => {
     setCartItems([...cartItems, item])
-
-    console.log(item)
   }
 
-  const removeFavorites = (index) => {
-    setCartItems((prev) => prev.filter()) 
+  const removeFavorites = (item) => {
+    setCartItems(prev => prev.filter(el => el !== item))
   }
 
   React.useEffect(() => {
-    fetch('https://dog.ceo/api/breeds/image/random/3').then((res) => {
+    fetch('https://dog.ceo/api/breeds/image/random/30').then((res) => {
       return res.json()
     }).then((json) => {
       setItems(json.message)
@@ -42,35 +41,35 @@ function App() {
 return (
     <div className="App">
         <div className="itemDog">
-          <div className='card__inner'>
+        <div className='card__inner'>
             <div className='cart-box' onClick = {openCart}>
-              <p className='cart__name'>{textFavorite}</p>     
+            <p className='cart__name'>{textFavorite}</p>     
             </div>
-          </div>
-          {favoriteItem ? <FavoriteBlock dogItems = {cartItems} removeFavorites = {removeFavorites}/> : 
+        </div>
+        {favoriteItem ? <FavoriteBlock dogItems = {cartItems} removeFavorites = {removeFavorites}/> : 
             (
             <div>
                 <h1 className='title'>
                   DOGS API-react
                 </h1>
                 <div className="first__block">
-                  <div className="cart__item">
+                <div className="cart__item">
                     <div className='photo__dog'>
-                          {
-                            items.map((item, i) => (
-                              <ImageDog 
-                                key={i}
+                        {
+                            items.map((item) => (
+                            <ImageDog 
+                                key={item}
                                 image = {item}
                                 onAddToCart = {onAddToCart}
-                              />
+                            />
                             ))
-                          }
+                        }
                     </div>
-                  </div>
+                </div>
                 </div>
             </div>
             )
-          }
+        }
         </div>
     </div>
   );

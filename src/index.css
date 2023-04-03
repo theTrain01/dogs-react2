@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .title {
@@ -80,7 +81,7 @@ margin: 0 auto;
 
 .favorite__block {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 
   background: rgb(51, 49, 49);
 }
@@ -128,4 +129,11 @@ margin: 0 auto;
 
 .delete:active {
   transform: translateY(3px);
+}
+
+.favorite__title {
+  color: #ffffff;
+  font-size: 39px;
+  text-align: center;
+  padding: 20px 0;
 }
