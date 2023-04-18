@@ -31,6 +31,10 @@ function App() {
     setCartItems(prev => prev.filter(el => el !== item))
   }
 
+  const removeDogsMain = (item) => {
+    setItems(prev => prev.filter(el => el !== item))
+  }
+
   React.useEffect(() => {
     fetch('https://dog.ceo/api/breeds/image/random/30').then((res) => {
       return res.json()
@@ -61,6 +65,7 @@ return (
                                 key={item}
                                 image = {item}
                                 onAddToCart = {onAddToCart}
+                                removeDogsMain = {removeDogsMain}
                             />
                             ))
                         }

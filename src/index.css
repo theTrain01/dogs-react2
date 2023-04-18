@@ -45,7 +45,7 @@ margin: 0 auto;
 }
 
 .card {
-  position: relative
+  position: relative;
 }
 
 .addLike, .addLike_green {
@@ -136,4 +136,16 @@ margin: 0 auto;
   font-size: 39px;
   text-align: center;
   padding: 20px 0;
+}
+
+.remove {
+  position: absolute;
+  background:rgb(3, 188, 255);
+  border: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  left: 55px;
+  bottom: 0px;
 }

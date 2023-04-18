@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImageDog = ({image,onAddToCart}) => {
+const ImageDog = ({image,onAddToCart, removeDogsMain}) => {
   const [isAdd, setIsAdd] = React.useState(false);
 
   const [text, setText] = React.useState('Добавить в избранное')
@@ -21,6 +21,8 @@ const ImageDog = ({image,onAddToCart}) => {
         <button onClick = {() => addInFavorite(image)} className={isAdd ? 'addLike_green' : 'addLike'}>
           {text}
         </button>
+
+        <button onClick = {() => removeDogsMain(image)} className='remove'>Удалить Собаку</button>
       </div>
     );
   }
