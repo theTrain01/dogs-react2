@@ -83,6 +83,9 @@ margin: 0 auto;
   width: 100vw;
   min-height: 100vh;
 
+  position: absolute;
+  top: 0;
+
   background: rgb(51, 49, 49);
 }
 
@@ -96,6 +99,9 @@ margin: 0 auto;
 
   background-color: blueviolet;
   border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  z-index: 10;
   cursor: pointer;
 
   color: #fff;
